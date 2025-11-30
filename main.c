@@ -26,18 +26,4 @@ int main() {
         printf("Previous Reading: ");
         scanf("%d", &records[i].prev_reading);
 
-        printf("Current Reading: ");
-        scanf("%d", &records[i].curr_reading);
-
-        printf("Tariff rate (₹ per unit): ");
-        scanf("%f", &records[i].tariff);
-
-        computeBilling(&records[i]);
-        records[i].anomaly_flag = detectAnomaly(&records[i]);
-    }
-
-    generateReport(records, n);
-    free(records);
-
-    return 0;
-}
+        
