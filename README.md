@@ -33,5 +33,15 @@ The project demonstrates the use of structures, arrays, functions, pointers, dyn
 
 ---
 
-## 📂 Project Structure
+-How It Works
+1. User enters the number of customers.  
+2. For each customer:
+   - Consumer ID  
+   - Previous and current meter readings  
+   - Tariff rate per unit  
+3. Program calculates:
+   - Units consumed  
+   - Total cost  
+4. Anomaly detection function flags abnormal usage.  
+5. A full monthly report is displayed.
 
