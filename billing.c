@@ -23,5 +23,21 @@ void generateReport(Record *records, int n) {
     int anomalies = 0;
 
     printf("\n========== MONTHLY REPORT ==========\n");
+    for (int i = 0; i < n; i++) {
+        printf("\nConsumer ID: %d", records[i].consumer_id);
+        printf("\nUsage: %d units", records[i].usage);
+        printf("\nBill Amount: ₹%.2f", records[i].cost);
 
+        if (records[i].anomaly_flag) {
+            printf("  <-- ANOMALY DETECTED!");
+            anomalies++;
+        }
+
+        total_revenue += records[i].cost;
+        printf("\n-------------------------------------");
+    }
+
+    printf("\nTotal Revenue: ₹%.2f", total_revenue);
+    printf("\nTotal Anomalies Detected: %d\n", anomalies);
+}
   
