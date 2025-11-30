@@ -44,4 +44,65 @@ The project demonstrates the use of structures, arrays, functions, pointers, dyn
    - Total cost  
 4. Anomaly detection function flags abnormal usage.  
 5. A full monthly report is displayed.
+Purpose of each file:
+   
+1. record.h — Header File
+Purpose of this file:
+Declares the structure used tostore customer data
+Declares the function prototypes (the functions used in other files)
+Allows main.c and billing.c to share the same data types and functions
 
+What it contains:
+Structure Record with:
+consumer ID
+meter readings
+tariff
+usage
+total bill
+anomaly flag
+
+Function declarations:
+computeBilling()
+detectAnomaly()
+generateReport()
+
+In simple words:
+ This file defines the “blueprint” of data and function names.
+
+2. billing.c — Billing Logic + Anomaly Detection + Report Generator
+Purpose of this file:
+This file contains all the logic of the electricity billing system.
+
+It does three jobs:
+Calculate usage & bill
+Detect unusual consumption
+Generate a monthly report
+
+Functions inside:
+1️⃣ computeBilling(Record *r)
+
+Calculates:
+usage = curr_reading - prev_reading
+cost  = usage × tariff
+Fixes negative values and computes the bill.
+
+2️⃣ detectAnomaly(Record *r)
+
+Checks:
+If usage > 500 units → anomaly = 1
+Else → anomaly = 0
+
+Flags unusual consumption which may indicate electricity theft.
+
+3️⃣ generateReport(records, n)
+Displays:
+Consumer ID
+Usage
+Bill amount
+Whether anomaly was detected
+Total revenue collected
+Total anomalies for the month
+
+In simple words:
+
+➡️ This file contains all the “brains” of the project — billing, anomaly detection, reporting.
