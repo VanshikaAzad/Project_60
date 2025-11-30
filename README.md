@@ -106,3 +106,64 @@ Total anomalies for the month
 In simple words:
 
 ➡️ This file contains all the “brains” of the project — billing, anomaly detection, reporting.
+
+3. main.c — Main Driver File
+Purpose of this file:
+This is where the program starts.
+It handles:
+User input
+Memory allocation
+Calling all the functions
+Passing data to billing.c functions
+What main.c does step by step:
+Ask the user how many customers exist.
+Allocate an array of Record structures using malloc().
+
+For each customer, input:
+consumer ID
+previous reading
+current reading
+tariff per unit
+
+For each record:
+Call computeBilling() — calculate usage & cost
+Call detectAnomaly() — check for abnormal reading
+
+After processing all customers:
+Call generateReport() — print a full monthly summary
+Free the memory.
+
+In simple words:
+
+This file manages input/output and coordinates everything.
+What the Entire Program Does (Short Description)
+This program acts like a Smart Electricity Billing System.
+
+It performs three main tasks:
+1️⃣ Bill Calculation
+
+For each customer, it calculates:
+
+Usage  = curr_meter - prev_meter
+Amount = usage × tariff
+
+2️⃣ Theft / Anomaly Detection
+
+If a customer consumes more than 500 units, it marks them as suspicious:
+ANOMALY DETECTED
+
+
+This simulates theft detection used by real electricity boards.
+
+3️⃣ Monthly Report Generation
+At the end, it prints a clean report:
+Consumer ID
+Usage (units)
+Bill amount
+Anomaly status
+Total revenue from all customers
+Number of anomalies
+
+Summary in One Sentence
+
+➡️ This project is a modular C program that calculates electricity bills, detects abnormal usage, and prints a complete monthly summary using structures, dynamic memory, and multi-file programming.
