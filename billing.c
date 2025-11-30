@@ -23,7 +23,7 @@ void generateReport(Record *records, int n) {
     int anomalies = 0;
 
     printf("\n========== MONTHLY REPORT ==========\n");
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) { // LOOPS UNTILL THE AMMOUNT OF CUSTOMERS HAS BEEN REACHED
         printf("\nConsumer ID: %d", records[i].consumer_id);
         printf("\nUsage: %d units", records[i].usage);
         printf("\nBill Amount: ₹%.2f", records[i].cost);
